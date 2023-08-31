@@ -2,6 +2,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: guestbook-ui
+  annotations:
+    description: "This is my pod"
+    owner: "John Doe"
 spec:
   replicas: 1
   revisionHistoryLimit: 3
