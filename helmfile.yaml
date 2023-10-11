@@ -1,0 +1,17 @@
+environments:
+  delta:
+    values:
+      - namespace: delta
+  beta:
+    values:
+      - namespace: beta
+
+releases:
+  - name: guestbook
+    chart: guestbook
+    namespace: {{ .Values.namespace }}
+    forceNamespace: {{ .Values.namespace }}
+    createNamespace: true
+    set:
+      - name: "TEST_ENV"
+        value: {{ .Values.namespace }}
